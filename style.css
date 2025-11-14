@@ -46,6 +46,26 @@
         }
         
         .btn {
+            margin-right: auto; 
+            display: block;
+            width: fit-content;
+            background: var(--gradiente-dourado);
+            color: var(--azul-vibrante);
+            text-align: right;
+            padding: 15px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.4s ease;
+            box-shadow: var(--sombra);
+            border: none;
+            cursor: pointer;
+        }
+        
+       
+
+         .btn-1 {
             display: inline-block;
             background: var(--gradiente-dourado);
             color: var(--azul-vibrante);
@@ -60,18 +80,18 @@
             cursor: pointer;
         }
         
-        .btn:hover {
+        .btn-1:hover {
             transform: translateY(-5px);
             box-shadow: 0 15px 25px rgba(212, 175, 55, 0.3);
         }
         
-        .btn-outline {
+        .btn-outline-2 {
             background: transparent;
             border: 2px solid var(--dourado-vibrante);
             color: var(--dourado-vibrante);
         }
         
-        .btn-outline:hover {
+        .btn-outline-2:hover {
             background: var(--dourado-vibrante);
             color: var(--azul-vibrante);
         }
@@ -123,6 +143,19 @@
             box-shadow: 0 5px 20px rgba(10, 42, 94, 0.3);
         }
         
+
+        .dots-menu {
+                font-size: 2rem;
+                color: #d4af37; /* dourado elegante */
+                cursor: pointer;
+            }
+
+            /* Oculta o ícone no desktop */
+            .mobile-menu-icon {
+                display: none;
+}
+
+
         .header-content {
             display: flex;
             justify-content: space-between;
@@ -567,65 +600,114 @@
             animation: fadeIn 1s ease forwards;
         }
         
-        /* Responsividade */
-        @media (max-width: 992px) {
-            .about-content, .schedule-content {
-                grid-template-columns: 1fr;
-            }
-            
-            .about-image {
-                order: -1;
-            }
-            
-            .hero h1 {
-                font-size: 2.8rem;
-            }
-        }
         
-        @media (max-width: 768px) {
-            .header-content {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            nav ul {
-                margin-top: 20px;
-                justify-content: center;
-            }
-            
-            .mobile-menu {
-                display: block;
-                position: absolute;
-                top: 20px;
-                right: 20px;
-            }
-            
-            nav ul {
-                display: none;
-                flex-direction: column;
-                width: 100%;
-                margin-top: 20px;
-            }
-            
-            nav ul.show {
-                display: flex;
-            }
-            
-            nav ul li {
-                margin: 10px 0;
-            }
-            
-            .hero-btns {
-                flex-direction: column;
-                gap: 15px;
-            }
-            
-            .about-stats {
-                grid-template-columns: 1fr;
-            }
-            
-            .section-title h2 {
-                font-size: 2rem;
-            }
-        }
+
+
+    @media (max-width: 992px) {
+    
+    .about-content, .schedule-content {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Inverte a ordem da imagem no "Quem Somos" para que o texto venha antes no tablet */
+    .about-image {
+        order: -1;
+    }
+    
+    /* Reduz o tamanho da fonte principal do HERO para tablets/desktops pequenos */
+    .hero h1 {
+        font-size: 2.8rem;
+    }
+}
+
+
+
+    @media (max-width: 768px) {
+    
+
+    /* Ajusta o layout do cabeçalho */
+    .header-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .hero h1 {
+        font-size: 2rem; 
+        line-height: 1.2;
+    }
+    
+    /* Botões em coluna */
+    .hero-btns {
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+    }
+
+    /* Estatísticas em uma coluna */
+    .about-stats {
+        grid-template-columns: 1fr; 
+        gap: 20px;
+    }
+
+    /* Títulos menores */
+    .section-title h2 {
+        font-size: 1.8rem;
+    }
+
+    /* Ajuste fino em textos grandes */
+    .text-6xl {
+        font-size: 2.5rem; 
+    }
+
+    .text-4xl {
+        font-size: 1.8rem;
+    }
+      .schedule-content {
+        grid-template-columns: 1fr;
+        padding: 0 8px; /* NÃO GRUDA NA LATERAL */
+    }
+
+    .schedule-card, 
+    .schedule-box,
+    .info-card {
+        margin: 0 auto;
+        width: 100%;
+        max-width: 500px;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        word-break: break-all;
+    }      
+
+    }
+    
+    /* Estilo base do menu mobile */
+    #mobile-menu-list {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #003366;
+        position: absolute; /* corrigido */
+        top: 72px; 
+        left: 0;
+        z-index: 10;
+        box-shadow: 0 8px 10px rgba(0, 0, 0, 0.2);
+        overflow-x: hidden;
+    }
+
+    /* Classe ativada pelo JS */
+    #mobile-menu-list.show {
+        display: flex;
+    }
+
+    /* Items do menu ocupando 100% da largura */
+    #mobile-menu-list li {
+        width: 100%;
+        text-align: center;
+        padding: 12px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+
    
